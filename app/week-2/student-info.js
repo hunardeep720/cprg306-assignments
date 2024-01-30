@@ -7,7 +7,7 @@ const StudentInfo = () => {
             <div>
                 <h1>Student Info</h1>
                 <p>Name: {name}</p>
-                <p>Github Link: {Github_link}</p>
+                <p>{Github_link}</p>
             </div>
         )
 }
