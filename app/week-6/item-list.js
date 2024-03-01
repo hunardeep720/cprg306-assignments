@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
 import Item from "./item.js";
-import items from "./items.json";
-const ItemList = () => {
+const ItemList = ({items}) => {
   const [sortBy, setSortBy] = useState("name");
   const handleSortChange = (newSortBy) => {
     setSortBy(newSortBy);
@@ -18,11 +17,11 @@ const ItemList = () => {
   });
     
   return (
-      <div className="mt-4">
+      <div className=" w-full justify-center text-center">
         <button
           onClick={() => handleSortChange("name")}
           style={{ backgroundColor: sortBy === "name" ? "green" : "orange" }}
-          className="mr-4 ml-4"
+          className="mr-40 h-10 mt-10"
         >
           Sort by Name
         </button>
@@ -31,13 +30,12 @@ const ItemList = () => {
           style={{
             backgroundColor: sortBy === "category" ? "green" : "orange",
           }}
-          className="ml-4"
+          className="ml-4 h-10"
         >
           Sort by Category
         </button>
-        <button></button>
-        <ul>
-          {sort.map((item) => (
+        <ul className="justify-center text-center">
+        {sort.map((item) => (
             <Item
               key={item.id}
               name={item.name}
