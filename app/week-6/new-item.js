@@ -5,7 +5,8 @@ const NewItem = ({handleAddItems}) => {
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("Produce");
 
-  const onAddItem = () => {
+  const onAddItem = (event) => {
+    event.preventDefault();
     handleAddItems(name, quantity, category);
     console.log(name, quantity, category);
   };
@@ -21,7 +22,7 @@ const NewItem = ({handleAddItems}) => {
   return (
     <div className="ml-7 mt-10">
       <div className="w-full">
-        <form onSubmit={onAddItem}>
+        <form onSubmit={e => onAddItem(e)}>
           <div className="grid gap-x-5  h-20 flex flex-wrap">
             <input
               required

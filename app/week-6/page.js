@@ -6,15 +6,9 @@ import ItemList from './item-list';
 import itemsData from './items.json';
 export default function Page() {
     const [items, setItems] = useState(itemsData);
-    useEffect(() => {
-      let data = [];
-      data.concat(items);
-      <ItemList items={data} />;
-  }, [items]);
     const handleAddItem = (itemName,itemQuantity,itemCategory) => {
         const newItem = {name: itemName,quantity: itemQuantity,category: itemCategory};
-        setItems([...items,newItem]);
-
+        setItems([...items, newItem]);
     };
     return (
       <main>
